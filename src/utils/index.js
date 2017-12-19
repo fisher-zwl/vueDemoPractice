@@ -1,3 +1,4 @@
+// var key104 = require()
 export default {
   goodTime (str) {
     let now = new Date().getTime()

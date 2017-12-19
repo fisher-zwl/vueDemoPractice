@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Header></Header>
+    <myHeader></myHeader>
+    <!-- img test -->
+    <div class="img_test">
+      <img src="static/image/lyf.jpg" alt="刘亦菲">
+    </div>
+    <!--  -->
     <div class="article_list">
       <ul>
         <li v-for="i in list">
@@ -11,14 +16,14 @@
         </li>
       </ul>
     </div>
-    <Footer></Footer>
+    <myFooter></myFooter>
   </div>
 </template>
 <script>
-import elHeader from '../components/header.vue'
-import elFooter from '../components/footer.vue'
+import myHeader from '../components/header.vue'
+import myFooter from '../components/footer.vue'
 export default {
-  components: { elHeader, elFooter },
+  components: { myHeader, myFooter },
   data () {
     return {
       list: []
