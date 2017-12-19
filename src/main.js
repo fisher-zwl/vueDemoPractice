@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import api from './api/index.js'
 
+// 引用工具文件
+import utils from './utils/index.js'
+// 将工具方法绑定到全局
+Vue.prototype.$utils = utils
 Vue.prototype.$api = api
 
 Vue.config.productionTip = false
