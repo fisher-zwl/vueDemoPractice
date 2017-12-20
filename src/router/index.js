@@ -5,6 +5,7 @@ import Content from '@/page/content'
 import UET from '@/page/ue_test'
 import JQ from '@/page/jq'
 import keyboard from '@/page/keyboard'
+import elementUI from '@/page/element_ui'
 
 Vue.use(Router)
 
@@ -25,6 +26,9 @@ export default new Router({
     }, {
       path: '/keyboard',
       component: keyboard
+    }, {
+      path: '/element_ui',
+      component: elementUI
     }
   ]
 })
