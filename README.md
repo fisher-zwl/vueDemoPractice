@@ -1,4 +1,4 @@
-# 感谢下面这位博主的引导：（里面包含详细的指导文档）
+# 感谢下面这位博主的引导：（里面包含详细的指导文档）https://github.com/fengcms/vue-demo-cnodejs.git
 
 1. [Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版（一）基础知识概述](http://blog.csdn.net/fungleo/article/details/77575077)
 2. [Vue2+VueRouter2+Webpack+Axios 构建项目实战2017重制版（二）安装 nodejs 环境以及 vue-cli 构建初始项目](http://blog.csdn.net/fungleo/article/details/77584701)
