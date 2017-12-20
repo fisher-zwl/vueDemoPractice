@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 // 引用API文件
 import api from './api/index.js'
@@ -26,9 +28,11 @@ import '../static/ue/ueditor.parse.min.js'
 // import '../static/js/jquery-3.2.1.min.js'
 
 /* eslint-disable no-new */
+Vue.use(ElementUI)
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App }
 })
+
