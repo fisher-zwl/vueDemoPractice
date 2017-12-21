@@ -1,43 +1,41 @@
 <template>
   <div>
     <myHeader></myHeader>
-    <!-- img test -->
-    <div class="img_test">
-      <img src="static/image/lyf.jpg" alt="刘亦菲">
-    </div>
-    <!--  -->
-    <div class="article_list">
-      <ul>
-        <li v-for="i in list">
-          <time v-text="$utils.goodTime(i.create_at)"></time>
-          <router-link :to="'/content/' + i.id">
-            {{ i.title }}
-          </router-link>
-        </li>
-      </ul>
+    <div class="content">
+      <div class="contenter">
+        <my-search></my-search>
+      </div>
     </div>
     <myFooter></myFooter>
   </div>
 </template>
 <script>
-import myHeader from '../components/header.vue'
-import myFooter from '../components/footer.vue'
+import myHeader from '../components/header/header.vue'
+import myFooter from '../components/footer/footer.vue'
+import mySearch from '../components/search/search.vue'
 export default {
-  components: { myHeader, myFooter },
+  components: { myHeader, myFooter, mySearch },
   data () {
     return {
-      list: []
     }
   },
   created () {
-    this.getData()
   },
   methods: {
     getData () {
-      this.$api.get('topics', null, r => {
-        this.list = r.data
-      })
     }
   }
 }
 </script>
+<style lang="scss" scoped>
+  .content{
+    width: 100%;
+  }
+  .contenter{
+      max-width: 1200px;
+      min-width: 1000px;
+      height: 60px;
+      margin: 0px auto;
+  }
+</style>
+
