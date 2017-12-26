@@ -4,18 +4,14 @@
         <input type="text" class="search-input-ipt"/>
       </div>
       <div class="search-select">
-        <el-dropdown>
-          <span class="el-dropdown-link">
-            下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>黄金糕</el-dropdown-item>
-            <el-dropdown-item>狮子头</el-dropdown-item>
-            <el-dropdown-item>螺蛳粉</el-dropdown-item>
-            <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-            <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+        <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-submenu index="1">
+            <template slot="title">我的工作台</template>
+            <el-menu-item index="1-1">选项1</el-menu-item>
+            <el-menu-item index="1-2">选项2</el-menu-item>
+            <el-menu-item index="1-3">选项3</el-menu-item>
+          </el-submenu>
+        </el-menu>
       </div>
       <input type="button" class="search-btn"/>
   </div>
@@ -27,6 +23,9 @@
       }
     },
     methods: {
+      handleSelect (key, keyPath) {
+        console.log(key, keyPath)
+      }
     }
   }
 </script>
@@ -37,7 +36,7 @@
       position: relative;
 
       .search-input{
-        border:1px solid #f1f1f1;
+        border:1px solid #dcdcdc;
         display:inline-block;
         position: absolute;
         left: 0;
@@ -59,17 +58,28 @@
         width: 120px;
         right: 150px;
         height: 50px;
-        border:1px solid #f1f1f1;
+        border:1px solid #dcdcdc;
         border-left: none;
         border-right: none;
+      }
+      .search-select /deep/ .el-submenu__title{
+        height: 50px;
+        line-height:50px;
+      }
+      .search-select /deep/ .el-menu--horizontal .el-submenu>.el-menu{
+        top: 50px;
+        width: 100px;
+        border: 1px solid #dcdcdc;
       }
 
       .search-btn{
         display:inline-block;
         position: absolute;
+        border:1px solid #dcdcdc;
+        outline: none;
         right: 0px;
         width: 150px;
-        height: 50px;
+        height: 52px;
       }
     }
 </style>
