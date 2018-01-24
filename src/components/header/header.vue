@@ -27,16 +27,28 @@
       </el-menu>
       <div class="login-enter">
         <button type="button">注册</button>
-        <button type="button">登录</button>
+        <button type="button"  v-on:click="dialogVisible = true">登录</button>
       </div>
     </div>
+    <el-dialog title="登录菜花网" :visible.sync="dialogVisible" width="40%" center :before-close="handleClose">
+      <div class="input-class">
+        <el-input class="input-num" v-model="input_num" placeholder="请输入账号"></el-input>
+        <div class="input-prompt"></div>
+        <el-input class="input-psw" v-model="input_psw" placeholder="请输入密码"></el-input>
+        <div class="input-prompt"></div>
+        <el-button class="login-btn" type="primary" @click="login">确 定</el-button>
+      </div>
+    </el-dialog>
   </header> 
 </template>
 <script>
   export default {
     data () {
       return {
-        activeIndex: '1'
+        activeIndex: '1',
+        dialogVisible: false,
+        input_num: '',
+        input_psw: ''
       }
     },
     methods: {
@@ -45,6 +57,16 @@
       },
       shouye (event) {
         console.log(event)
+      },
+      handleClose (done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done()
+          })
+          .catch(_ => {})
+      },
+      login () {
+        this.dialogVisible = false
       }
     }
   }
@@ -117,5 +139,16 @@
         border-color: #0095E5;
       }
     }
+  }
+  .input-class{
+    padding-left: 70px;
+    padding-right: 70px;
+      .input-prompt{
+        height: 30px;
+      }
+      .login-btn{
+        width: 100%;
+        margin-bottom: 10px;
+      }
   }
 </style>
